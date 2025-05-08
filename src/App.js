@@ -1,24 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
+import Aboutme from './components/Aboutme';
+import Contact from './components/Contact';
+import Home from './components/Home';
+import Navbar from './components/Navbar';
+import Project from './components/Project';
+import Skills from './components/Skills';
+import Footer from './components/Footer';
+import Alert from './components/Alert';
+import { useState } from 'react';
+import Resume from './components/Resume';
 
 function App() {
+  const [alert, setAlert] = useState(null)
+  const showAlert = (messege ,type) => {
+    setAlert({
+      msg: messege,
+      type:type
+    })
+    setTimeout(() => {
+      setAlert(null)
+    }, 2000);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+              <div>
+                <Navbar />
+                <Alert alert={alert}/>
+                <Routes>
+                  <Route  path="/" element={<Home />} />
+                  <Route  path="/aboutme" element={<Aboutme />} />
+                  <Route  path="/skills" element={<Skills />} />
+                  <Route  path="/project" element={<Project />} />
+                  <Route  path="/resume" element={<Resume />} />
+                  <Route  path="/contect" element={<Contact showAlert={showAlert}/>} />
+                </Routes>
+                <Footer />
+              </div>
+            </Router>
+    </>
   );
 }
 
