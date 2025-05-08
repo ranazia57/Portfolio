@@ -1,4 +1,3 @@
-import React from 'react';
 import TypeWriterName from './TypeWriterName';
 import { Link } from 'react-router-dom';
 

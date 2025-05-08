@@ -95,24 +95,24 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden flex flex-col items-center bg-black p-4">
-          <Link to="/" className="text-green-100 py-2">
-            Home
-          </Link>
-          <Link to="/aboutme" className="text-green-100 py-2">
-            About Me
-          </Link>
-          <Link to="/skills" className="text-green-100 py-2">
-            Skills
-          </Link>
-          <Link to="/project" className="text-green-100 py-2">
-            Projects
-          </Link>
-          <Link to="/contect" className="text-green-100 py-2">
-            Contact
-          </Link>
-        </div>
-      )}
+  <div className="md:hidden flex flex-col items-center bg-black p-4">
+    <Link to="/" className="text-green-100 py-2" onClick={() => setIsOpen(false)}>
+      Home
+    </Link>
+    <Link to="/aboutme" className="text-green-100 py-2" onClick={() => setIsOpen(false)}>
+      About Me
+    </Link>
+    <Link to="/skills" className="text-green-100 py-2" onClick={() => setIsOpen(false)}>
+      Skills
+    </Link>
+    <Link to="/project" className="text-green-100 py-2" onClick={() => setIsOpen(false)}>
+      Projects
+    </Link>
+    <Link to="/contect" className="text-green-100 py-2" onClick={() => setIsOpen(false)}>
+      Contact
+    </Link>
+  </div>
+)}
     </nav>
   );
 }

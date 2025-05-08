@@ -112,23 +112,29 @@ export default function Projects() {
 
   return (
     <div className="bg-black min-h-screen py-10 px-4 text-white">
-      <h1 className="text-4xl font-bold text-green-400 text-left ml-24 mb-10">My Projects</h1>
-      <div className="grid gap-10 max-w-6xl mx-auto">
+      <h1 className="text-4xl font-bold text-green-400 text-left ml-6 sm:ml-24 mb-10">
+        My Projects
+      </h1>
+      <div className="grid gap-10 max-w-6xl mx-auto px-2 sm:px-0">
         {projects.map((project, idx) => (
           <div
             key={idx}
-            className="p-6 bg-slate-800 rounded-2xl shadow-lg max-w-screen-lg min-h-max"
+            className="p-4 sm:p-6 bg-slate-800 rounded-2xl shadow-lg w-full overflow-hidden"
           >
-            <h2 className="text-2xl font-bold text-green-400 mb-2">{project.title}</h2>
-            <p className="text-slate-300 mb-4">{project.description}</p>
+            <h2 className="text-2xl font-bold text-green-400 mb-2">
+              {project.title}
+            </h2>
+            <p className="text-slate-300 mb-4 text-sm sm:text-base">
+              {project.description}
+            </p>
 
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]} 
+              modules={[Navigation, Pagination, Autoplay]}
               navigation
               pagination={{ clickable: true }}
               autoplay={{
-                delay: 2000, 
-                disableOnInteraction: false, 
+                delay: 2000,
+                disableOnInteraction: false,
               }}
               className="rounded-xl overflow-hidden"
             >
@@ -137,7 +143,7 @@ export default function Projects() {
                   <img
                     src={img}
                     alt={`Project screenshot ${imgIdx + 1}`}
-                    className="w-full h-[400px] object-contain bg-black cursor-pointer"
+                    className="w-full h-60 sm:h-[400px] object-contain bg-black cursor-pointer"
                     onClick={() => handleImageClick(img)}
                   />
                 </SwiperSlide>
@@ -146,7 +152,7 @@ export default function Projects() {
 
             <div className="mt-6">
               <h3 className="text-lg font-semibold text-white mb-2">Key Benefits:</h3>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <ul className="list-disc list-inside text-slate-300 space-y-1 text-sm sm:text-base">
                 {project.benefits.map((point, index) => (
                   <li key={index}>✔ {point}</li>
                 ))}
@@ -159,7 +165,7 @@ export default function Projects() {
                 {project.techUsed.map((tech, i) => (
                   <span
                     key={i}
-                    className="bg-green-400 text-black px-3 py-1 rounded-full text-sm font-medium"
+                    className="bg-green-400 text-black px-3 py-1 rounded-full text-xs sm:text-sm font-medium"
                   >
                     {tech}
                   </span>
@@ -167,18 +173,18 @@ export default function Projects() {
               </div>
             </div>
 
-            <div className="mt-6 flex gap-4">
+            <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 to={project.github}
                 target="_blank"
                 rel="noreferrer"
-                className="px-4 py-2 bg-green-400 text-black rounded-lg shadow hover:bg-green-500 transition"
+                className="px-4 py-2 bg-green-400 text-black rounded-lg shadow hover:bg-green-500 transition text-sm"
               >
                 GitHub Code
               </Link>
               <button
                 disabled
-                className="px-4 py-2 bg-gray-600 text-white rounded-lg cursor-not-allowed"
+                className="px-4 py-2 bg-gray-600 text-white rounded-lg cursor-not-allowed text-sm"
               >
                 Live Demo (Coming Soon)
               </button>
@@ -188,8 +194,8 @@ export default function Projects() {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-          <div className="relative">
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 px-4">
+          <div className="relative w-full max-w-4xl">
             <button
               onClick={handleCloseModal}
               className="absolute top-4 right-4 bg-green-400 p-2 rounded-full text-white hover:bg-green-500 transition"
@@ -200,7 +206,7 @@ export default function Projects() {
             <img
               src={currentImage}
               alt="Full preview"
-              className="w-full max-w-4xl max-h-[80vh] object-contain"
+              className="w-full max-h-[80vh] object-contain rounded-xl"
             />
           </div>
         </div>
