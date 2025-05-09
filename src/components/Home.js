@@ -8,7 +8,7 @@ const Home = () => {
       
 
       <div className="text-center md:text-left max-w-xl pb-32">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-slate-300 animate-pulse hover:scale-105 transition-transform duration-500">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-slate-300 animate-pulse hover:scale-105 transition-transform duration-500 h-16">
           Hi, I'm <span className="text-green-400"><TypeWriterName /></span>
         </h1>
         <p className="text-slate-300 text-lg md:text-xl mb-6">
