@@ -31,7 +31,7 @@ const TypeWriterName = () => {
   }, [index, isDeleting]);
 
   return (
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-slate-600 to-green-400">
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-green-400">
       {displayText}
       <span className="animate-pulse">|</span>
     </span>

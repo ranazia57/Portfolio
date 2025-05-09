@@ -115,11 +115,11 @@ export default function Projects() {
       <h1 className="text-4xl font-bold text-green-400 text-left ml-6 sm:ml-24 mb-10">
         My Projects
       </h1>
-      <div className="grid gap-10 max-w-6xl mx-auto px-2 sm:px-0">
+      <div className="grid gap-10 max-w-6xl mx-auto px-2 sm:px-0 ">
         {projects.map((project, idx) => (
           <div
             key={idx}
-            className="p-4 sm:p-6 bg-slate-800 rounded-2xl shadow-lg w-full overflow-hidden"
+            className="p-4 sm:p-6 bg-white/10 rounded-2xl shadow-lg w-full overflow-hidden"
           >
             <h2 className="text-2xl font-bold text-green-400 mb-2">
               {project.title}
@@ -143,7 +143,7 @@ export default function Projects() {
                   <img
                     src={img}
                     alt={`Project screenshot ${imgIdx + 1}`}
-                    className="w-full h-60 sm:h-[400px] object-contain bg-black cursor-pointer"
+                    className="w-full h-60 sm:h-[400px] object-contain bg-white/10 cursor-pointer rounded"
                     onClick={() => handleImageClick(img)}
                   />
                 </SwiperSlide>
@@ -194,7 +194,7 @@ export default function Projects() {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 px-4">
+        <div className="fixed inset-0 bg-white/10 bg-opacity-80 flex items-center justify-center z-50 px-4">
           <div className="relative w-full max-w-4xl">
             <button
               onClick={handleCloseModal}

@@ -5,7 +5,7 @@ const Resume = () => {
 
   return (
     <section className="min-h-screen bg-black text-white px-6 py-6">
-      <h2 className="text-4xl font-bold text-green-400 text-center mb-10 border-b-2 border-green-400 pb-2">
+      <h2 className="text-4xl font-bold text-green-400 text-center mb-10 border-b-2 border-white/10 pb-6">
         {activeTab === 'resume' ? 'My Resume' : 'My Certificate'}
       </h2>
 
@@ -35,22 +35,115 @@ const Resume = () => {
 
       {/* Resume View */}
       {activeTab === 'resume' && (
-        <div className="flex flex-col items-center">
-          <div className="shadow-2xl rounded-lg overflow-hidden border border-green-400 hover:scale-105 transition-transform duration-500">
-            <img
-              src="../resume.jpg"
-              alt="Resume"
-              className="w-full max-w-4xl object-cover"
-            />
+        <section className="min-h-screen bg-black text-white px-4 md:px-16 py-10">
+          {/* Download Button */}
+         
+
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10">
+            {/* Sidebar */}
+            <aside className="md:w-1/3 bg-white/10 text-white rounded-xl p-6 shadow-lg">
+              <div className="flex flex-col items-center mb-6">
+                <img
+                  src="../mypic.jpg"
+                  alt="Profile"
+                  className="w-32 h-32 rounded-full border-4 border-green-400 object-cover"
+                />
+                <h2 className="text-xl font-bold mt-4">MUHAMMAH ZIA UL DIN</h2>
+                <p className="text-sm text-gray-300">Web Developer</p>
+              </div>
+
+              <div className="space-y-4 text-sm">
+                <div>
+                  <h3 className="text-green-400 font-semibold">📞 Contact</h3>
+                  <p>+923116586081</p>
+                  <p>ranaziauldin.sensation@gmail.com</p>
+                  <p>CHAK NO 57/5L QAIRABAD SAHIWAL , PAKISTAN</p>
+                </div>
+
+                <div>
+                  <h3 className="text-green-400 font-semibold">🎓 Education</h3>
+                  <p><strong>MATRIC</strong> - FROM GOVT.SCHOOL SAHIWAL (2017-2019)</p>
+                  <p><strong>INTERMEDIATE</strong> - FROM PUNJAB COLLEGE SAHIWAL (2019-2021)</p>
+                </div>
+
+                <div>
+                  <h3 className="text-green-400 font-semibold">📜 Certifications</h3>
+                  <ul className="list-disc list-inside">
+                    <li>Certified Full Stack Web Developer</li>
+                    <li>Certified by PNY Software Technology</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-green-400 font-semibold">💡 Skills</h3>
+                  <p>HTML, CSS, Tailwind CSS, Bootstrap</p>
+                  <p>React JS, Node.js, MongoDB</p>
+                </div>
+
+                <div>
+                  <h3 className="text-green-400 font-semibold">🌐 Language</h3>
+                  <p>English, Urdu</p>
+                </div>
+              </div>
+            </aside>
+
+            {/* Main Content */}
+            <main className="md:w-2/3 space-y-8">
+              <section>
+                <h2 className="text-2xl font-bold text-green-700 mb-3">About Me</h2>
+                <p className="text-white leading-relaxed">
+                  Hi, I’m MUHAMMAH ZIA UL DIN — a passionate React developer with a knack for crafting modern, responsive, and performance-driven web applications.
+
+                  I specialize in full-stack development using React.js, Node.js, and MongoDB. What drives me is the thrill of turning ideas into interactive, real-world solutions — from clean code to seamless user experience.
+
+                  I love exploring new tech, solving real-world problems, and building tools that actually help people. Whether it's a fun side project, a challenging app, or a team collaboration — I’m always ready to learn and grow.
+
+                  Let’s build something awesome together!
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-bold text-green-700 mb-3">Projects</h2>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="font-semibold text-white">TextUtils – A React-based text analyzer</h3>
+                    <p>Features: Word/Character count, Uppercase/Lowercase conversion, Remove spaces, Email extractor</p>
+                    <p className="text-sm text-gray-500">Tools: React, Bootstrap, JavaScript</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">NoteSphere – Full-stack notes manager</h3>
+                    <p>Features: User authentication, Create/Update/Delete notes, MongoDB integration</p>
+                    <p className="text-sm text-gray-500">Stack: React, Node.js, MongoDB</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">NewsHive – News web app</h3>
+                    <p>Features: Live news feed by category using external API</p>
+                    <p className="text-sm text-gray-500">Tools: React, NewsAPI</p>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-bold text-green-700 mb-3">Tools & Others</h2>
+                <p>Git, GitHub, VS Code, ThunderClient</p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-bold text-green-700 mb-3">Reference</h2>
+                <p>References available upon request.</p>
+              </section>
+            </main>
           </div>
-          <a
-            href="/resume.pdf"
-            download
-            className="mt-10 inline-block bg-green-500 text-black font-semibold py-3 px-8 rounded-full hover:bg-green-600 transition duration-300"
-          >
-            Download Resume
-          </a>
-        </div>
+           <div className="flex justify-center mt-10">
+            <a
+              href="/resume.pdf"
+              download
+              className="bg-green-400 text-black font-semibold px-5 py-2 rounded-full shadow hover:bg-green-500 transition"
+            >
+              Download Resume
+            </a>
+          </div>
+        </section>
       )}
 
       {/* Certificate View */}

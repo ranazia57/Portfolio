@@ -98,7 +98,7 @@ export default function Navbar() {
   <div className="md:hidden flex flex-col items-center bg-black p-4">
     <Link to="/" className="text-green-100 py-2" onClick={() => setIsOpen(false)}>
       Home
-    </Link>
+    </Link>  
     <Link to="/aboutme" className="text-green-100 py-2" onClick={() => setIsOpen(false)}>
       About Me
     </Link>
